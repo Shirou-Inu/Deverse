@@ -1,2 +1,2 @@
-# deverse
-A github page containing all of my web development projects
+# Deverse
+Use python -m http.server 8000 to run the server
