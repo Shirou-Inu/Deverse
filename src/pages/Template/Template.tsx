@@ -1,11 +1,11 @@
-function App() {
+function Template() {
   return (
     <main>
       <h1>
-        App
+        Template
       </h1>
     </main>
   )
 }
 
-export default App
+export default Template
