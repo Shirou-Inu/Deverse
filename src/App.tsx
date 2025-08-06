@@ -2,7 +2,7 @@ function App() {
   return (
     <main>
       <h1>
-        HELLO WORLD!
+        App
       </h1>
     </main>
   )
