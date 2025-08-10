@@ -1,9 +1,9 @@
-function Home() {
+function About() {
   return (
     <main className="bg-bg-primary">
-      <h1>Homepage</h1>
+      <h1>About</h1>
     </main>
   );
 }
 
-export default Home;
+export default About;
