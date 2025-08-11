@@ -1,3 +1,4 @@
+import { basePath } from "../../utils/routes";
 import { useState } from "react";
 import { FiChevronRight } from "react-icons/fi";
 import { DiAptana } from "react-icons/di";
@@ -57,7 +58,7 @@ function Sidebar() {
 
         {/* Logo & Title */}
         <motion.div layout className="flex items-center flex-shrink-0 w-full">
-          <Link to={"/"} className="flex items-center gap-2">
+          <Link to={basePath + "/"} className="flex items-center gap-2">
             <DiAptana
               size={32}
               className={`transition-transform duration-300 ${

@@ -4,11 +4,13 @@ import Home from "../../pages/Home/Home";
 import About from "../../pages/About/About";
 import Template from "../../pages/Template/Template";
 
+export const basePath = "/Deverse";
+
 const routes: RouteObject[] = [
   { path: "*", element: <NotFoundPage /> },
-  { path: "/", element: <Home /> },
-  { path: "/about", element: <About /> },
-  { path: "/template", element: <Template /> },
+  { path: basePath + "/", element: <Home /> },
+  { path: basePath + "/about", element: <About /> },
+  { path: basePath + "/template", element: <Template /> },
 ];
 
 export default routes;
