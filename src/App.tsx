@@ -9,7 +9,7 @@ function App() {
       <div>
         <Sidebar />
       </div>
-      <div>
+      <div className="flex-1">
         <h1>{routing}</h1>
       </div>
     </main>
