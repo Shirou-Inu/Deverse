@@ -11,13 +11,13 @@ interface SidebarLinkCardProps {
   className?: string;
 }
 
-function SidebarLinkCard({
+const SidebarLinkCard: React.FC<SidebarLinkCardProps> = ({
   url,
   text = "",
   icon = <DiAtom size={24} />,
   current = false,
   collapsed = false,
-}: SidebarLinkCardProps) {
+}) => {
   if (current) {
     return (
       <div
@@ -60,6 +60,6 @@ function SidebarLinkCard({
       </Link>
     );
   }
-}
+};
 
 export default SidebarLinkCard;

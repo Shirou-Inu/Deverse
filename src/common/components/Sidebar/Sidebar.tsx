@@ -12,7 +12,7 @@ const contentLinks = [
   { url: basePath + "/template", text: "Template", icon: <DiAtom size={24} /> },
 ];
 
-function Sidebar() {
+const Sidebar: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
 
@@ -51,6 +51,6 @@ function Sidebar() {
       </motion.nav>
     </aside>
   );
-}
+};
 
 export default Sidebar;
