@@ -17,7 +17,7 @@ const ItemCard: React.FC<ItemCardProps> = ({
   link,
 }) => {
   return (
-    <div className="bg-bg rounded-xl border border-border-muted overflow-hidden transition-all hover:shadow-lg hover:border-border">
+    <div className="flex flex-col h-full bg-bg rounded-xl border border-border-muted overflow-hidden transition-all hover:shadow-lg hover:border-border">
       {/* PREVIEW */}
       <div className="h-48 bg-bg-dark flex items-center justify-center overflow-hidden">
         <img
@@ -26,7 +26,7 @@ const ItemCard: React.FC<ItemCardProps> = ({
           className="w-full h-full object-cover object-center"
         />
       </div>
-      <div className="p-6">
+      <div className="flex flex-col flex-1 p-6">
         {/* TITLE */}
         <h3 className="text-xl font-bold mb-2">{title}</h3>
 
@@ -36,25 +36,30 @@ const ItemCard: React.FC<ItemCardProps> = ({
           <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-bg to-transparent pointer-events-none"></div>
         </div>
 
-        {/* TAGS */}
-        <div className="flex flex-wrap gap-2 mb-6">
-          {tags.map((tag, index) => (
-            <span
-              key={index}
-              className="px-3 py-1 bg-bg-dark text-sm rounded-full text-text-muted"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+        {/* SPACER */}
+        <div className="flex-1" />
 
-        {/* Link */}
-        <Link
-          to={basePath + link}
-          className="inline-block px-4 py-2 text-primary font-medium hover:bg-bg-dark rounded-lg"
-        >
-          View Details →
-        </Link>
+        <div>
+          {/* TAGS */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {tags.map((tag, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 bg-bg-dark text-sm rounded-full text-text-muted"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* LINK */}
+          <Link
+            to={basePath + link}
+            className="inline-block px-4 py-2 text-primary font-medium hover:bg-bg-dark rounded-lg"
+          >
+            View Details →
+          </Link>
+        </div>
       </div>
     </div>
   );

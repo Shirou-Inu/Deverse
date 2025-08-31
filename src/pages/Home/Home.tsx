@@ -7,7 +7,14 @@ function Home() {
   const [projects, setProjects] = useState<Meta[]>([]);
 
   useEffect(() => {
-    loadAllProjectMeta().then(setProjects);
+    loadAllProjectMeta().then((allProjects) => {
+      // Sort by descending id and take the first 6
+      const latest = allProjects
+        .filter((p) => p.active)
+        .sort((a, b) => b.id - a.id)
+        .slice(0, 6);
+      setProjects(latest);
+    });
   }, []);
 
   return (
@@ -21,23 +28,9 @@ function Home() {
             <span className="text-primary">Deverse</span>
           </h1>
           <p className="text-xl text-text-muted max-w-3xl mx-auto mb-10">
-            I create modern web applications with React and Tailwind CSS. Browse
-            my latest projects below.
+            This website hosts all types of web applications created using React
+            and Tailwind CSS. Browse my latest projects below.
           </p>
-          <div className="flex justify-center gap-4">
-            <a
-              href="#projects"
-              className="px-8 py-3 bg-primary text-highlight rounded-lg font-medium hover:opacity-90 transition-all"
-            >
-              View Projects
-            </a>
-            <a
-              href="#contact"
-              className="px-8 py-3 border-2 border-border rounded-lg font-medium hover:bg-bg-light transition-all"
-            >
-              Get in Touch
-            </a>
-          </div>
         </div>
       </section>
 
