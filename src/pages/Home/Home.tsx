@@ -1,29 +1,14 @@
+import { useEffect, useState } from "react";
+import type { Meta } from "../../common/interfaces/meta";
+import { loadAllProjectMeta } from "../../common/utils/loadProjects";
+import ItemCard from "../../common/components/ItemCard/ItemCard";
+
 function Home() {
-  const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description:
-        "Full-featured online store with cart functionality and payment processing",
-      tags: ["React", "Node.js", "Stripe"],
-      link: "#",
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description:
-        "Drag-and-drop interface with real-time collaboration features",
-      tags: ["React", "Firebase", "Tailwind"],
-      link: "#",
-    },
-    {
-      id: 3,
-      title: "Weather Dashboard",
-      description: "Real-time weather data visualization with forecasting",
-      tags: ["API Integration", "Chart.js", "Geolocation"],
-      link: "#",
-    },
-  ];
+  const [projects, setProjects] = useState<Meta[]>([]);
+
+  useEffect(() => {
+    loadAllProjectMeta().then(setProjects);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-bg text-text">
@@ -61,7 +46,7 @@ function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 md:px-8 bg-bg-light">
+      <section id="projects" className="py-20 px-4 md:px-8 bg-bg-light flex-1">
         <div className="mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">
             Featured Projects
@@ -72,44 +57,25 @@ function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-bg rounded-xl border border-border-muted overflow-hidden transition-all hover:shadow-lg hover:border-border"
-              >
-                <div className="h-48 bg-bg-dark flex items-center justify-center">
-                  <div className="bg-bg-light border-2 border-dashed border-border-muted rounded-xl w-4/5 h-4/5 flex items-center justify-center">
-                    <span className="text-text-muted">Project Preview</span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-text-muted mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-bg-dark text-sm rounded-full text-text-muted"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={project.link}
-                    className="inline-block px-4 py-2 text-primary font-medium hover:bg-bg-dark rounded-lg"
-                  >
-                    View Details →
-                  </a>
-                </div>
-              </div>
-            ))}
+            {projects.map(
+              (project, index) =>
+                project.active && (
+                  <ItemCard
+                    key={index}
+                    previewSrc={project.preview}
+                    title={project.name}
+                    description={project.description}
+                    tags={project.tags}
+                    link={project.url}
+                  />
+                )
+            )}
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 bg-bg-dark border-t border-border-muted">
+      <footer className="py-12 px-4 bg-bg-dark border border-border-muted">
         <div className="mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
