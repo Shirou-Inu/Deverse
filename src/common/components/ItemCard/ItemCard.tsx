@@ -30,9 +30,8 @@ const ItemCard: React.FC<ItemCardProps> = ({
         <h3 className="text-xl font-bold mb-2">{title}</h3>
 
         {/* DESCRIPTION */}
-        <div className="relative max-h-24 overflow-hidden mb-4 min-h-20">
+        <div className="relative max-h-24 overflow-hidden mb-4 min-h-20 [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]">
           <p className="text-text-muted">{description}</p>
-          <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-bg to-transparent pointer-events-none"></div>
         </div>
 
         {/* SPACER */}
