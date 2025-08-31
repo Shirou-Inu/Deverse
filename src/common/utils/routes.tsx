@@ -7,10 +7,10 @@ import Projects from "../../pages/Projects/Projects";
 import About from "../../pages/About/About";
 
 const staticRoutes: RouteObject[] = [
-  { path: "*", element: <NotFoundPage /> },
   { path: "/", element: <Home /> },
   { path: "/projects", element: <Projects /> },
   { path: "/about", element: <About /> },
+  { path: "*", element: <NotFoundPage /> },
 ];
 
 async function generateRoutes(): Promise<RouteObject[]> {
@@ -25,7 +25,6 @@ async function generateRoutes(): Promise<RouteObject[]> {
       ),
     }));
 
-  console.log([...staticRoutes, ...projectRoutes]);
   return [...staticRoutes, ...projectRoutes];
 }
 
