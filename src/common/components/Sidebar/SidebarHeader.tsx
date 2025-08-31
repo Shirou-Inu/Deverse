@@ -2,7 +2,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { DiAptana } from "react-icons/di";
 import { FiChevronRight } from "react-icons/fi";
-import { basePath } from "../../utils/routes";
 
 interface SidebarHeaderProps {
   collapsed: boolean;
@@ -58,7 +57,7 @@ const SidebarHeader: React.FC<SidebarHeaderProps> = ({
       {/* Logo & Title */}
       <motion.div layout className="flex items-center flex-shrink-0 w-full">
         <Link
-          to={basePath + "/"}
+          to={"/"}
           className="flex items-center gap-2
           hover:text-[oklch(0.5_0.07_264)] dark:hover:text-[oklch(0.75_0.07_264)]
           transition-colors"

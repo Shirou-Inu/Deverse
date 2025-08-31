@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { basePath } from "../../utils/routes";
 
 interface ItemCardProps {
   previewSrc: string;
@@ -54,7 +53,7 @@ const ItemCard: React.FC<ItemCardProps> = ({
 
           {/* LINK */}
           <Link
-            to={basePath + link}
+            to={link}
             className="inline-block px-4 py-2 text-primary font-medium hover:bg-bg-dark rounded-lg"
           >
             View Details →
