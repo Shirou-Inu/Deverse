@@ -63,7 +63,7 @@ function Home() {
                   <ItemCard
                     key={index}
                     previewSrc={project.preview}
-                    title={project.name}
+                    title={project.displayName}
                     description={project.description}
                     tags={project.tags}
                     link={project.url}
