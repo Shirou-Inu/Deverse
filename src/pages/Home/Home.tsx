@@ -39,10 +39,6 @@ function Home() {
             </a>
           </div>
         </div>
-
-        {/* Decorative elements */}
-        {/* <div className="absolute top-10 right-10 w-24 h-24 rounded-full bg-secondary opacity-20 blur-3xl"></div> */}
-        {/* <div className="absolute bottom-20 left-10 w-32 h-32 rounded-full bg-primary opacity-15 blur-3xl"></div> */}
       </section>
 
       {/* Projects Section */}
@@ -79,37 +75,8 @@ function Home() {
         <div className="mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
-              <h2 className="text-2xl font-bold">Your Name</h2>
-              <p className="text-text-muted mt-2">
-                Web Developer & UI Designer
-              </p>
-            </div>
-
-            <div className="flex space-x-6">
-              <a
-                href="#"
-                className="text-text-muted hover:text-text transition-colors"
-              >
-                <span className="sr-only">GitHub</span>
-                {/* Icon would go here */}
-                <div className="w-6 h-6 bg-text-muted rounded-full"></div>
-              </a>
-              <a
-                href="#"
-                className="text-text-muted hover:text-text transition-colors"
-              >
-                <span className="sr-only">LinkedIn</span>
-                {/* Icon would go here */}
-                <div className="w-6 h-6 bg-text-muted rounded-full"></div>
-              </a>
-              <a
-                href="#"
-                className="text-text-muted hover:text-text transition-colors"
-              >
-                <span className="sr-only">Twitter</span>
-                {/* Icon would go here */}
-                <div className="w-6 h-6 bg-text-muted rounded-full"></div>
-              </a>
+              <h2 className="text-2xl font-bold">Aaron Yang</h2>
+              <p className="text-text-muted mt-2">Software Developer</p>
             </div>
           </div>
 
