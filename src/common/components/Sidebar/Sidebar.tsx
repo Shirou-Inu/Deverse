@@ -1,15 +1,20 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
 import SidebarHeader from "./SidebarHeader";
-import { DiAtom } from "react-icons/di";
 import SidebarLinkCard from "./SidebarLinkCard";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 import { basePath } from "../../utils/routes";
+import { FaHome, FaUserCircle } from "react-icons/fa";
+import { BsKanban } from "react-icons/bs";
 
 const contentLinks = [
-  { url: basePath + "/", text: "Home", icon: <DiAtom size={24} /> },
-  { url: basePath + "/about", text: "About", icon: <DiAtom size={24} /> },
-  { url: basePath + "/template", text: "Template", icon: <DiAtom size={24} /> },
+  { url: basePath + "/", text: "Home", icon: <FaHome size={24} /> },
+  {
+    url: basePath + "/projects",
+    text: "Projects",
+    icon: <BsKanban size={24} />,
+  },
+  { url: basePath + "/about", text: "About", icon: <FaUserCircle size={24} /> },
 ];
 
 const Sidebar: React.FC = () => {
