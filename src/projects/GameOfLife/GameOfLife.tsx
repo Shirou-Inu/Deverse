@@ -1,4 +1,4 @@
-function ConwayGameOfLife() {
+function GameOfLife() {
   return (
     <main>
       <h1>Conway's Game of Life</h1>
@@ -6,4 +6,4 @@ function ConwayGameOfLife() {
   );
 }
 
-export default ConwayGameOfLife;
+export default GameOfLife;
