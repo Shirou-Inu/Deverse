@@ -85,6 +85,13 @@ function Projects() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-4 bg-bg-dark border border-border-muted">
+        <div className="mx-auto text-center text-text-muted text-sm">
+          © {new Date().getFullYear()} All rights reserved.
+        </div>
+      </footer>
     </div>
   );
 }
