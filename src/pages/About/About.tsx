@@ -1,5 +1,3 @@
-import React from "react";
-
 function About() {
   return (
     <div className="min-h-screen flex flex-col bg-bg text-text">
