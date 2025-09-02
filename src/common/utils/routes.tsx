@@ -25,7 +25,7 @@ async function generateRoutes(): Promise<RouteObject[]> {
       ),
     }));
 
-  return [...staticRoutes, ...projectRoutes];
+  return [...projectRoutes, ...staticRoutes];
 }
 
 export default generateRoutes;
