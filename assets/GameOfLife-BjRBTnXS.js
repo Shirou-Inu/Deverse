@@ -1,1 +1,0 @@
-import{j as e}from"./index-C266rScX.js";function a(){return e.jsxs("div",{className:"p-4",children:[e.jsx("h1",{className:"text-2xl font-bold mb-4",children:"Conway's Game of Life"}),e.jsx("iframe",{src:"/Deverse/projects/GameOfLife/index.html",className:"w-full h-[600px] border rounded-2xl shadow"})]})}export{a as default};
