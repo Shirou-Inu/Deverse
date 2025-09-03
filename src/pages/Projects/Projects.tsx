@@ -52,7 +52,7 @@ function Projects() {
 
       {/* Projects Section */}
       <section className="py-20 px-4 md:px-8 bg-bg-light flex-1">
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto">
           {/* Search Bar */}
           <div className="mb-10 flex justify-center">
             <input
