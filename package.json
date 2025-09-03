@@ -5,12 +5,16 @@
   "homepage": "https://Shirou-Inu.github.io/Deverse",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm run build:all",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
+    "dev:projects": "tsc --project tsconfig.projects.json && npm run copy-html",
     "build": "tsc -b && vite build",
+    "build:projects": "tsc --project tsconfig.projects.json && npm run copy-html",
+    "build:all": "npm run build:projects && npm run build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "copy-html": "xcopy projects-src\\*.html public\\projects /S /Y"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",

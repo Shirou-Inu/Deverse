@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "nodenext",
+    "rootDir": "./projects-src",
+    "outDir": "./public/projects",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "nodenext"
+  },
+  "include": ["projects-src/**/*"],
+  "exclude": ["node_modules"]
+}
