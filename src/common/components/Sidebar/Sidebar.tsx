@@ -22,7 +22,7 @@ const Sidebar: React.FC = () => {
 
   return (
     <aside
-      className={`sticky left-0 top-0 flex flex-shrink-0 flex-col h-screen transition-all duration-300 px-1 border-r ${
+      className={`flex flex-shrink-0 flex-col h-screen transition-all duration-300 px-1 border-r ${
         collapsed ? "w-16" : "w-64"
       }
       bg-[oklch(0.9_0.08_264)] text-[oklch(0.15_0.07_264)] border-[oklch(0.7_0.07_264)]
