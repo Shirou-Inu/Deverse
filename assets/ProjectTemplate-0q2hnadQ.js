@@ -1,1 +1,0 @@
-import{j as e}from"./index-BnlCxngu.js";function r(){return e.jsxs("div",{className:"p-4",children:[e.jsx("h1",{className:"text-2xl font-bold mb-4",children:"Project Template"}),e.jsx("iframe",{src:"/Deverse/public/projects/ProjectTemplate/index.html",className:"w-full h-full border rounded-2xl shadow"})]})}export{r as default};
