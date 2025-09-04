@@ -18,6 +18,7 @@ window.addEventListener("resize", () => {
     canvas.height = height;
 });
 const grid = new Grid(50, 50, canvas.width, canvas.height);
+grid.initGrid(true);
 function draw() {
     // Clear screen
     ctx.clearRect(0, 0, width, height);
