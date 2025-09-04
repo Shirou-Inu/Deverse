@@ -15,12 +15,12 @@ class Grid {
         this.initGrid();
         this.setCellSize();
     }
-    initGrid(random = false) {
+    initGrid(aliveProb = 0) {
         this.grid = [];
         for (let i = 0; i < this.rows; i++) {
             this.grid[i] = [];
             for (let j = 0; j < this.cols; j++) {
-                this.grid[i][j] = random ? Math.random() < 0.25 : false;
+                this.grid[i][j] = Math.random() < aliveProb;
             }
         }
     }
