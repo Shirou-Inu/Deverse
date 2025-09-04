@@ -40,11 +40,14 @@ class Grid {
         }
     }
     draw(ctx) {
+        // Draw background
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, this.cellSize * this.rows, this.cellSize * this.cols);
         // Draw cells
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {
                 if (this.grid[i][j]) {
-                    ctx.fillStyle = "black";
+                    ctx.fillStyle = "white";
                     ctx.fillRect(j * this.cellSize, i * this.cellSize, this.cellSize, this.cellSize);
                 }
             }
