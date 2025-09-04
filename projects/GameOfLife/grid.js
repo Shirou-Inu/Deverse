@@ -20,7 +20,7 @@ class Grid {
         for (let i = 0; i < this.rows; i++) {
             this.grid[i] = [];
             for (let j = 0; j < this.cols; j++) {
-                this.grid[i][j] = random ? Math.random() < 0.5 : false;
+                this.grid[i][j] = random ? Math.random() < 0.25 : false;
             }
         }
     }
