@@ -40,13 +40,16 @@ class Grid {
         }
     }
     draw(ctx) {
+        // Draw cells
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {
                 if (this.grid[i][j]) {
+                    ctx.fillStyle = "black";
                     ctx.fillRect(j * this.cellSize, i * this.cellSize, this.cellSize, this.cellSize);
                 }
             }
         }
+        // Draw grid
     }
 }
 export default Grid;
