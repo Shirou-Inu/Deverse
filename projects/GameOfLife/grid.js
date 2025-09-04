@@ -40,16 +40,13 @@ class Grid {
         }
     }
     draw(ctx) {
-        // Calculate offset to center the grid
-        const xOffset = (this.maxWidth - this.cols * this.cellSize) / 2;
-        const yOffset = (this.maxHeight - this.rows * this.cellSize) / 2;
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {
                 if (this.grid[i][j]) {
-                    ctx.fillRect(xOffset + j * this.cellSize, yOffset + i * this.cellSize, this.cellSize, this.cellSize);
+                    ctx.fillRect(j * this.cellSize, i * this.cellSize, this.cellSize, this.cellSize);
                 }
                 else {
-                    ctx.strokeRect(xOffset + j * this.cellSize, yOffset + i * this.cellSize, this.cellSize, this.cellSize);
+                    ctx.strokeRect(j * this.cellSize, i * this.cellSize, this.cellSize, this.cellSize);
                 }
             }
         }
