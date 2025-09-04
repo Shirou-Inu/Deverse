@@ -45,9 +45,6 @@ class Grid {
                 if (this.grid[i][j]) {
                     ctx.fillRect(j * this.cellSize, i * this.cellSize, this.cellSize, this.cellSize);
                 }
-                else {
-                    ctx.strokeRect(j * this.cellSize, i * this.cellSize, this.cellSize, this.cellSize);
-                }
             }
         }
     }
