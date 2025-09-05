@@ -42,7 +42,7 @@ class Grid {
     draw(ctx) {
         // Draw background
         ctx.fillStyle = "black";
-        ctx.fillRect(0, 0, this.cellSize * this.rows, this.cellSize * this.cols);
+        ctx.fillRect(0, 0, this.cellSize * this.cols, this.cellSize * this.rows);
         // Draw cells
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {

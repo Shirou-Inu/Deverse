@@ -10,7 +10,7 @@ let height = window.innerHeight;
 canvas.width = width;
 canvas.height = height;
 // Variables
-let margin = 20;
+const margin = 20;
 // Handle window resize
 window.addEventListener("resize", () => {
     width = window.innerWidth;
