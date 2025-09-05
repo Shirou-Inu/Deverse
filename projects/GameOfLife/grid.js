@@ -26,18 +26,59 @@ class Grid {
     }
     setMaxWidth(maxWidth) {
         this.maxWidth = maxWidth;
+        this.setCellSize();
     }
     setMaxHeight(maxHeight) {
         this.maxHeight = maxHeight;
+        this.setCellSize();
     }
     setCellSize() {
-        const ratio = this.cols / this.rows;
-        if (this.maxHeight < (ratio * this.maxWidth)) {
+        const ratio = this.rows / this.cols;
+        if (this.maxHeight < ratio * this.maxWidth) {
             this.cellSize = this.maxHeight / this.rows;
         }
         else {
             this.cellSize = this.maxWidth / this.cols;
         }
+    }
+    getWidth() {
+        return this.cellSize * this.cols;
+    }
+    getHeight() {
+        return this.cellSize * this.rows;
+    }
+    step() {
+        const newGrid = [];
+        for (let i = 0; i < this.rows; i++) {
+            newGrid[i] = [];
+            for (let j = 0; j < this.cols; j++) {
+                // Grab total live cells
+                const liveCount = this.getLiveCount(i, j);
+                // Determine cell status
+                if (this.grid[i][j]) {
+                    newGrid[i][j] = liveCount > 1 && liveCount < 4;
+                }
+                else {
+                    newGrid[i][j] = liveCount == 3;
+                }
+            }
+        }
+        this.grid = newGrid;
+    }
+    getLiveCount(i, j) {
+        let liveCount = 0;
+        for (let di = -1; di <= 1; di++) {
+            for (let dj = -1; dj <= 1; dj++) {
+                if (di === 0 && dj === 0)
+                    continue;
+                const ni = i + di;
+                const nj = j + dj;
+                if (ni >= 0 && ni < this.rows && nj >= 0 && nj < this.cols) {
+                    liveCount += this.grid[ni][nj] ? 1 : 0;
+                }
+            }
+        }
+        return liveCount;
     }
     draw(ctx) {
         // Draw background

@@ -11,15 +11,23 @@ canvas.width = width;
 canvas.height = height;
 // Variables
 const margin = 20;
+const grid = new Grid(50, 50, width - 2 * margin, 0.75 * height - 2 * margin);
+grid.initGrid(0.25);
 // Handle window resize
 window.addEventListener("resize", () => {
     width = window.innerWidth;
     height = window.innerHeight;
     canvas.width = width;
     canvas.height = height;
+    grid.setMaxWidth(width - 2 * margin);
+    grid.setMaxHeight(0.75 * height - 2 * margin);
 });
-const grid = new Grid(10, 50, width - 2 * margin, (0.75 * height) - 2 * margin);
-grid.initGrid(0.25);
+window.addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+        grid.step();
+        e.preventDefault();
+    }
+});
 function draw() {
     // Clear screen
     ctx.clearRect(0, 0, width, height);
@@ -28,7 +36,7 @@ function draw() {
     ctx.fillRect(0, 0, width, height);
     // Translate origin
     ctx.save();
-    ctx.translate(margin, 0.25 * height + margin);
+    ctx.translate(0.5 * (width - grid.getWidth()), 0.625 * height - 0.5 * grid.getHeight());
     // Draw grid
     grid.draw(ctx);
     // Restore origin
