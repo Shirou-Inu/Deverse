@@ -18,7 +18,7 @@ window.addEventListener("resize", () => {
     canvas.width = width;
     canvas.height = height;
 });
-const grid = new Grid(10, 10, width - 2 * margin, (0.75 * height) - 2 * margin);
+const grid = new Grid(10, 50, width - 2 * margin, (0.75 * height) - 2 * margin);
 grid.initGrid(0.25);
 function draw() {
     // Clear screen
